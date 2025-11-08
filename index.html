@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" lang="AR" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taz Tech Supply | IT Support & Technology Services</title>
+  <link rel="stylesheet" href="tech-support.css" />
+  <style>
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .language-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .language-toggle button {
+      background-color: #111827;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* Contact Form */
+   /* ===== CONTACT SECTION ===== */
+.contact-section {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  background: radial-gradient(ellipse at top, #0f172a 0%, #020617 100%);
+  overflow: hidden;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 20px rgba(96,165,250,0.4);
+}
+
+/* الحقول */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #cbd5e1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid #60a5fa;
+  box-shadow: 0 0 10px rgba(96,165,250,0.3);
+}
+
+/* زر الإرسال */
+.contact-form button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(96,165,250,0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(124,58,237,0.5);
+}
+
+/* الخلفية المتحركة */
+.contact-section .animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-section .circle {
+  position: absolute;
+  bottom: -150px;
+  background: radial-gradient(circle, #60a5fa 0%, transparent 70%);
+  border-radius: 50%;
+  animation: moveUp 12s infinite ease-in-out;
+  opacity: 0.15;
+}
+
+.contact-section .circle:nth-child(1) {
+  left: 20%;
+  width: 250px;
+  height: 250px;
+  animation-delay: 0s;
+}
+.contact-section .circle:nth-child(2) {
+  left: 60%;
+  width: 300px;
+  height: 300px;
+  animation-delay: 4s;
+}
+.contact-section .circle:nth-child(3) {
+  left: 80%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+.contact-section .circle:nth-child(4) {
+  left: 40%;
+  width: 200px;
+  height: 200px;
+  animation-delay: 10s;
+}
+
+
+    /* Highlighted tagline */
+    .tagline {
+      color: #2563eb;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+   /* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #0f172a 0%, #020617 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(96,165,250,0.4);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+/* الأزرار */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.site-link {
+  background-color: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.site-link:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  box-shadow: 0 0 20px rgba(37,99,235,0.4);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid #60a5fa;
+  color: #60a5fa;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(96,165,250,0.2);
+  transform: scale(1.05);
+}
+
+/* الخلفية المتحركة */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.circle {
+  position: absolute;
+  bottom: -150px;
+  background: radial-gradient(circle, #60a5fa 0%, transparent 70%);
+  border-radius: 50%;
+  animation: moveUp 10s infinite ease-in-out;
+  opacity: 0.2;
+}
+
+.circle:nth-child(1) {
+  left: 15%;
+  width: 200px;
+  height: 200px;
+  animation-delay: 0s;
+}
+.circle:nth-child(2) {
+  left: 45%;
+  width: 300px;
+  height: 300px;
+  animation-delay: 3s;
+}
+.circle:nth-child(3) {
+  left: 70%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 6s;
+}
+.circle:nth-child(4) {
+  left: 85%;
+  width: 250px;
+  height: 250px;
+  animation-delay: 8s;
+}
+
+/* الحركات */
+@keyframes moveUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.2; }
+  50% { transform: translateY(-300px) scale(1.2); opacity: 0.3; }
+  100% { transform: translateY(-600px) scale(1); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div id="tech-bg"></div>
+  <canvas id="network"></canvas>
+
+   <!-- Language Toggle -->
+  <div class="language-toggle">
+    <button onclick="toggleLanguage()">AR / EN</button>
+  </div>
+
+  <!-- Header -->
+  <!-- Header -->
+<header class="header">
+  <div class="logo">
+    <span class="logo-icon">⚙️</span>
+    <h1 id="siteTitle">Taz Tech Supply</h1>
+  </div>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#support">Support</a>
+    <a href="https://taztechsupply.com" target="_blank">Visit Our Website</a>
+
+  </nav>
+  <div class="language-toggle">
+    <button onclick="toggleLanguage()">AR / EN</button>
+  </div>
+</header>
+
+  
+
+ <!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h2 class="hero-title">Your Partner in Tech Support & Equipment</h2>
+    <p class="hero-subtitle">
+      Empowering businesses with reliable technology solutions, equipment supply, and expert IT support.
+    </p>
+
+    <p class="hero-text">
+      <strong>Taz Tech Supply</strong> provides professional IT equipment, setup, and technical support for businesses across Saudi Arabia and beyond.  
+      We help your team perform at its best with fast, secure, and affordable solutions that bridge the gap between people and technology.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Get a Quote</a>
+      <a href="#support" class="btn-secondary">Contact Support</a>
+    </div>
+  </div>
+
+  <!-- خلفية متحركة -->
+  <div class="animated-bg">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+
+</section>
+
+  <!-- ✅ About Section -->
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-overlay"></div>
+
+  <div class="about-content">
+    <h3>About Our Work</h3>
+    <p>
+      At <strong>Taz Tech Supply</strong>, we provide comprehensive technology solutions designed to keep your business running smoothly and efficiently.  
+      Our work covers a wide range of services including:
+    </p>
+    <ul>
+      <li>💻 Providing and configuring computers, laptops, and professional workstations.</li>
+      <li>🌐 Installing and maintaining high-speed, secure network systems.</li>
+      <li>🛠️ Offering remote and on-site IT support for hardware and software issues.</li>
+      <li>📦 Supplying marketing teams and offices with essential tech equipment and accessories.</li>
+      <li>🔒 Implementing data security, backup, and recovery solutions.</li>
+    </ul>
+    <p>
+      With years of experience and a customer-focused approach, we help businesses enhance performance and reliability through technology.  
+      We aim to be your trusted partner for all IT needs — from setup and supply to ongoing support.
+    </p>
+    
+
+</section>
+  
+
+  <!-- Product Grid -->
+<!-- Product Grid -->
+<section id="products" class="products-section">
+  <h2 class="section-title">Our Featured Products</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Business Laptop</h3>
+      <p>High-performance laptop ideal for corporate use.</p>
+      <p class="price"><strong>Price:</strong> 3,200 SAR</p>
+    </div>
+    <div class="card">
+      <h3>WiFi Router</h3>
+      <p>Dual-band router with high security and speed.</p>
+      <p class="price"><strong>Price:</strong> 450 SAR</p>
+    </div>
+    <div class="card">
+      <h3>Workstation PC</h3>
+      <p>Powerful desktop for marketing and design teams.</p>
+      <p class="price"><strong>Price:</strong> 5,800 SAR</p>
+    </div>
+    <div class="card">
+      <h3>On-Demand IT Support</h3>
+      <p>Remote and onsite support for hardware and software issues.</p>
+      <p class="price"><strong>Starting from:</strong> 150 SAR / hour</p>
+    </div>
+  </div>
+
+  <!-- Support Section -->
+  <section id="support" class="support">
+    <h3>Need Immediate Tech Support?</h3>
+    <p>Our experts are available 24/7 to assist you with all your IT and technology needs.</p>
+    <button class="support-btn" onclick="window.open('https://wa.me/0545543984', '_blank')">
+      Contact Support
+    </button>
+  </section>
+<section id="contact" class="contact-section">
+  <div class="contact-overlay"></div>
+
+  <div class="contact-form">
+
+    <h3>Contact Us</h3>
+    <form action="https://formspree.io/f/xzzgeyke" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="animated-bg">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 Taz Tech Supply. All rights reserved. | IT & Tech Support in Saudi Arabia
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/0545543984" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+    💬
+  </a>
+
+  
+<script>
+    // خلفية متحركة (شبكة دوائر)
+    const canvas = document.getElementById("network");
+    const ctx = canvas.getContext("2d");
+    let width, height, nodes;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      nodes = Array(60).fill().map(() => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        a.x += a.vx;
+        a.y += a.vy;
+        if (a.x < 0 || a.x > width) a.vx *= -1;
+        if (a.y < 0 || a.y > height) a.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(a.x, a.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "#60a5fa";
+        ctx.fill();
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.strokeStyle = "rgba(147,197,253," + (1 - dist / 120) + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener("resize", resize);
+    resize();
+    draw();
+
+    // التبديل بين اللغتين
+    function toggleLanguage() {
+      const html = document.documentElement;
+      const isEnglish = html.lang === "en";
+
+      if (isEnglish) {
+        html.lang = "ar";
+        html.dir = "rtl";
+        document.getElementById("siteTitle").textContent = "تاز لتوريد التقنية";
+        document.getElementById("tagline").textContent = "حلول تقنية وخدمات دعم فني احترافية";
+        document.getElementById("heroTitle").textContent = "شريكك في الدعم التقني وتوريد المعدات";
+        document.getElementById("heroText").textContent = "نقدم خدمات الدعم الفني، الصيانة، وحلول التقنية للأفراد والشركات.";
+        document.getElementById("aboutTitle").textContent = "نبذة عن أعمالنا";
+        document.getElementById("aboutList").innerHTML = `
+          <li>💻 توريد وإعداد أجهزة الحاسب المكتبية والمحمولة.</li>
+          <li>🌐 تركيب وصيانة الشبكات الآمنة عالية السرعة.</li>
+          <li>🛠️ تقديم الدعم الفني عن بُعد أو في الموقع.</li>
+          <li>📦 تزويد الفرق بالمعدات التقنية الأساسية.</li>
+          <li>🔒 تنفيذ حلول النسخ الاحتياطي وحماية البيانات.</li>`;
+      } else {
+        html.lang = "en";
+        html.dir = "ltr";
+        document.getElementById("siteTitle").textContent = "Taz Tech Supply";
+        document.getElementById("tagline").textContent = "Technology Solutions & Professional IT Support";
+        document.getElementById("heroTitle").textContent = "Your Partner in Tech Support & Equipment";
+        document.getElementById("heroText").textContent = "We provide professional IT support, maintenance, and technology solutions for companies and individuals.";
+        document.getElementById("aboutTitle").textContent = "About Our Work";
+        document.getElementById("aboutList").innerHTML = `
+          <li>💻 Providing and configuring computers and workstations.</li>
+          <li>🌐 Installing and maintaining secure networks.</li>
+          <li>🛠️ Offering remote & onsite IT support.</li>
+          <li>📦 Supplying teams with essential tech equipment.</li>
+          <li>🔒 Implementing data protection & backup solutions.</li>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
